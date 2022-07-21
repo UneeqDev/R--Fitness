@@ -5,6 +5,7 @@ import Timer from "./Timer";
 const container = {
   width: "100vw",
   overflowX: "none",
+  paddingBottom: "1rem",
 
   // backgroundColor: "red",
 };
@@ -47,7 +48,10 @@ function Detail({ exerciseDetail }) {
               {name}
             </Typography>
             <Typography sx={{ textAlign: "center" }}>
-              Exercises keep you strong!{" "}
+              Exercise has been shown to help block out negative thoughts,
+              distract us from our daily worries and improve sleep patterns and
+              may also change levels of chemicals in your brain for the better,
+              such as serotonin, endorphins, and stress hormones{" "}
               <b style={{ textTransform: "capitalize" }}>{name}</b> is one of
               the best Exercises to target your{" "}
               <b style={{ textTransform: "capitalize" }}>{target} </b>. It will

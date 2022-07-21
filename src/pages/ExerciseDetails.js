@@ -3,25 +3,27 @@ import React, { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 import Detail from "../components/Detail";
-// import ExerciseVideos from "../components/ExerciseVideos";
+import ExerciseVideos from "../components/ExerciseVideos";
 
 import {
   fetchData,
   exerciseOptions,
-  // youtubeOptions,
+  youtubeOptions,
 } from "../utills/fetchData";
 
 const ExerciseDetails = () => {
   const [exerciseDetail, setExerciseDetail] = useState({});
-  // const [exerciseVideos, setExerciseVideos] = useState({});
+  const [exerciseVideos, setExerciseVideos] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behaviour: "smooth" });
     const fetchExercisesData = async () => {
-      //exercisedburl and youtubeSearchdbUrl
+      // exercisedburl and youtubeSearchdbUrl
+
       const exerciseDbUrl = "https://exercisedb.p.rapidapi.com";
-      // const youTubeSearchUrl =
-      //   "https://youtube-search-and-download.p.rapidapi.com";
+      const youTubeSearchUrl =
+        "https://youtube-search-and-download.p.rapidapi.com";
 
       //fetching each exercise detail data
       const exerciseDetailData = await fetchData(
@@ -31,13 +33,12 @@ const ExerciseDetails = () => {
       setExerciseDetail(exerciseDetailData);
 
       //fetching each exercise video data using the exerciseDetailname as the search query
-      // const exerciseVideosData = await fetchData(
-      //   `${youTubeSearchUrl}/search?query=${exerciseDetailData.name}`,
-      //   youtubeOptions
-      // );
+      const exerciseVideosData = await fetchData(
+        `${youTubeSearchUrl}/search?query=${exerciseDetailData.name}`,
+        youtubeOptions
+      );
 
-      // setExerciseVideos(exerciseVideosData);
-      // console.log(exerciseVideos);
+      setExerciseVideos(exerciseVideosData.contents);
     };
     fetchExercisesData();
   }, [id]);
@@ -46,10 +47,10 @@ const ExerciseDetails = () => {
     <>
       <Box>
         <Detail exerciseDetail={exerciseDetail} />
-        {/* <ExerciseVideos
+        <ExerciseVideos
           exerciseVideos={exerciseVideos}
           name={exerciseDetail.name}
-        /> */}
+        />
       </Box>
     </>
   );

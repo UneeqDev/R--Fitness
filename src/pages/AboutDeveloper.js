@@ -10,7 +10,7 @@ const container = {
   display: "flex",
   alignItems: "center",
   jusitfyContent: "center",
-
+  paddingBottom: "2rem",
   flexDirection: { md: "row", sm: "column", xs: "column" },
 };
 const top = {
@@ -142,13 +142,17 @@ function AboutDeveloper() {
               color="primary"
               fontSize="20px"
               mb={2}
+              textAlign="center"
             >
               ABOUT ME
             </Typography>
 
             <Typography
               variant="p"
-              sx={{ fontSize: { md: "17", sm: "17px", xs: "16px" } }}
+              sx={{
+                fontSize: { md: "17", sm: "17px", xs: "16px" },
+                lineHeight: "22px",
+              }}
             >
               I am an innovative <b>frontend developer</b> with 4 months
               experience building and maintaining responsive websites. I am

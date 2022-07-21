@@ -10,7 +10,7 @@ const ImgStyle = styled("img")({
   width: "100%",
   height: "100%",
   objectFit: "cover",
-  backgroundColor: "red",
+
   borderRadius: "5%",
 });
 function Challenge() {

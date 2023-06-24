@@ -120,6 +120,7 @@ function AboutDeveloper() {
                 </Box>
               </a>
             </MotionInView>
+            <>p</>
             <MotionInView variants={varRotateIn}>
               <a
                 href="https://linkedin.com/mwlite/In/uneeqdev"
@@ -134,38 +135,7 @@ function AboutDeveloper() {
             </MotionInView>
           </Stack>
         </Stack>
-        <MotionInView variants={varFadeInUp}>
-          <Stack sx={bottom} direction="column">
-            <Typography
-              variant="p"
-              fontWeight="bold"
-              color="primary"
-              fontSize="20px"
-              mb={2}
-              textAlign="center"
-            >
-              ABOUT ME
-            </Typography>
-
-            <Typography
-              variant="p"
-              sx={{
-                fontSize: { md: "17", sm: "17px", xs: "16px" },
-                lineHeight: "22px",
-              }}
-            >
-              I am an innovative <b>frontend developer</b> with 4 months
-              experience building and maintaining responsive websites. I am
-              proficient in developing websites using React/Next, Typescript and
-              Firebase, troubleshooting simple/complex issues and implementing
-              new features based on user feedback. <br />
-              <br />
-              <t />
-              My expertise is in the area of responsive design. With every line
-              of code, I strive to make the web a beautiful place!
-            </Typography>
-          </Stack>
-        </MotionInView>
+     
       </Box>
     </>
   );
